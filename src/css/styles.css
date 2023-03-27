@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+}
+
+#search-box {
+    font: inherit;
+    padding: 8px;
+    max-width: 320px;
+    margin-bottom: 16px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #212121;
+    line-height: 1.5;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.container {}
+
+.search-input {}
+
+.country-list {}
+
+.country-list__item {}
+
+.country-info__description {
+    padding: 10px 20px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ebe8e8;
+}
+
+.country-info__img {
+    padding: 5px;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.country-description {}
+
+.country-description__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.country-description__official-name {}
+
+.mark-text {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.country-description__population {}
+
+.country-description__capital {}
+
+.country-description__languages {}
