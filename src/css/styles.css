@@ -38,9 +38,9 @@ li {
 
 .country-list__item {}
 
-.country-info {
+.country-info__description {
     padding: 10px 20px;
-    max-width: 400px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 10px;

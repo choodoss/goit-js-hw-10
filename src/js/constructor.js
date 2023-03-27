@@ -1,6 +1,6 @@
 export function createHtml(arr) {
     return arr.map(item => {
-        return `<div class="country-info">
+        return `<div class="country-info__description">
         <img class="country-info__img" src="${item.flags.svg}" alt="flag" width="300">
             <ul class="country-description">
                 <li class="country-description__item">
