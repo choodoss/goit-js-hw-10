@@ -9,31 +9,33 @@ const searchEl = document.querySelector('#search-box');
 const countryInfoEl = document.querySelector('.country-info');
 const countryssearchEl = document.querySelector('.country-list');
 
-let isCountryInfoDisplayed = false;
+const isCountryInfoDisplayed = false;
 
 function handleSearchCountry(e) {
     const name = e.target.value.trim();
     if (!name) {
         clearResults();
+        sessionStorage.removeItem('contry');
         Notify.failure('В інпуті немає даних, для пошуку вкажіть предмет пошуку в інпуті');
         return;
     }
 
-    if (localStorage.getItem('contry') !== name) {
+    if (sessionStorage.getItem('contry') !== name) {
         clearResults();
     }
+
     fetchCountries(name)
         .then(data => {
             if (data.length > 10) {
                 clearResults();
                 Notify.failure('Введіть більш точний запит');
-            } else if (data.length > 1 && data.length < 10) {
+            } else if (data.length >= 1 && data.length <= 10) {
                 clearResults();
                 countryssearchEl.innerHTML = createListHtml(data);
             } else if (data.length === 1) {
                 if (!isCountryInfoDisplayed) {
                     clearResults();
-                    localStorage.setItem('contry', name);
+                    sessionStorage.setItem('contry', name);
                     countryInfoEl.innerHTML = createHtml(data);
                     isCountryInfoDisplayed = true;
                 }
